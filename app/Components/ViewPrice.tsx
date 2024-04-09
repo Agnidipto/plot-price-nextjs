@@ -161,9 +161,10 @@ function ViewPrice() {
     </div>}
     {!(isFetching || isMutating) && !error && 
     <div>
-      <h1 className='text-lg'>Price</h1>
+      <h1 className='text-2xl block xl:hidden mb-8'>Kolkata Plot Price</h1>
+      <h1 className='text-2xl hidden xl:block mb-8'>Price</h1>
       <h1 className='text-5xl mt-8'>
-        {(Number(price)/100000).toFixed(2)} Lacs!
+        ₹ {(Number(price)/100000).toFixed(2)} Lacs!
       </h1>
     </div>}
     {!(isFetching || isMutating) && error && 
@@ -227,6 +228,7 @@ function ViewPrice() {
         type="checkbox"
         onChange={handleCheckbox}
         name="bordered-checkbox" 
+        defaultChecked
         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
         <label htmlFor="new_property" className="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Is new property?</label>
       </div>
@@ -253,8 +255,7 @@ function ViewPrice() {
     <button 
     type="submit"
     onClick={handleSubmit} 
-    className="mt-5 text-black bg-gray-50 border hover:bg-gray-950 hover:text-gray-50 hover:border-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-600 font-medium text-sm w-full px-5 py-2.5 text-center ">
-      Submit
+    className="mb-16 mt-5 text-black bg-gray-50 border hover:bg-gray-950 hover:text-gray-50 hover:border-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-600 font-medium text-sm w-full px-5 py-2.5 text-center ">      Submit
     </button>
   </div>
   <div></div>

@@ -8,12 +8,6 @@ import { useContext, useEffect, useState } from 'react';
 import LocationContext from '../Context/LocationContext';
 delete L.Icon.Default.prototype._getIconUrl;
 
-// L.Icon.Default.mergeOptions({
-//   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-//   iconUrl: require('leaflet/dist/images/marker-icon.png'),
-//   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-// });
-
 const KolkataStreetView = () => {
 
   const {location, setLocation} = useContext(LocationContext)
@@ -37,7 +31,7 @@ const KolkataStreetView = () => {
     return null;
   }
 
-  ////////////////////////////////////////
+  //////////////////////////////////////
   useEffect(() => {
     ELG.geocode()
       .text(`${location} West Bengal`)
@@ -56,8 +50,6 @@ const KolkataStreetView = () => {
         url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         attribution='&copy; <a href="https://carto.com/">CARTO</a> contributors'
       />
-      {/* <Marker position = {marker}/> */}
-      {/* <Circle center={marker} pathOptions={{ fillColor: 'grey', color:'grey', fillOpacity:'0.1', opacity:'0.1' }} radius={5000} /> */}
       <Geocoder address={`${location} West Bengal`} />
     </MapContainer>
   )

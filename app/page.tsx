@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import ViewPrice from './Components/ViewPrice'
 import LeftContent from './Components/LeftContent'
+import ScrollToTopButton from './Components/ScrollToTopButton'
 
 export default async function Home() {
   return (<>
@@ -12,6 +13,7 @@ export default async function Home() {
           <ViewPrice />
         </div>
       </div>
+      <ScrollToTopButton />
       
       </>
   )
