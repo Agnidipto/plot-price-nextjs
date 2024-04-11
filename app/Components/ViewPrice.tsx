@@ -21,8 +21,8 @@ type myData = {
 
 async function testPredictions() : Promise<any> {
   try {
-    const model = await axios.get('http://localhost:5000/')
-    const res = await axios.get('http://localhost:5000/test')
+    const model = await axios.get('https://plot-price-flask.onrender.com/')
+    const res = await axios.get('https://plot-price-flask.onrender.com/test')
     // console.log(res.data)
     return res.data.price
   }
@@ -40,7 +40,7 @@ async function testPredictions() : Promise<any> {
 
 async function getPricePredictions(data : myData) : Promise<any> {
   try {
-    const res = await axios.post('http://localhost:5000/predict', data)
+    const res = await axios.post('https://plot-price-flask.onrender.com/predict', data)
     // console.log('res', res)
     return res.data.price
   } catch(err : any) {
@@ -57,7 +57,7 @@ async function getPricePredictions(data : myData) : Promise<any> {
 
 async function getLocations() : Promise<any> {
   try {
-    const res = await axios.get('http://localhost:5000/locations')
+    const res = await axios.get('https://plot-price-flask.onrender.com/locations')
     return res.data
   }
   catch(err: any) {
@@ -145,7 +145,6 @@ function ViewPrice() {
 
   function handleSubmit(e: any) {
     e.preventDefault()
-    console.log(data)
     priceMutate.mutate(data)
   }
 

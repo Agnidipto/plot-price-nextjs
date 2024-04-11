@@ -19,7 +19,6 @@ const KolkataStreetView = () => {
     ELG.geocode()
       .text(address)
       .run((err, results, response) => {
-        console.log(results.results[0].latlng);
         const { lat, lng } = results.results[0].latlng;
         map.flyTo([lat, lng], 14);
 
@@ -36,13 +35,11 @@ const KolkataStreetView = () => {
     ELG.geocode()
       .text(`${location} West Bengal`)
       .run((err, results, response) => {
-        console.log(results.results[0].latlng);
+        // console.log(results.results[0].latlng);
         const { lat, lng } = results.results[0].latlng;
         setMarker([lat, lng])
       });
   }, [location])
-
-  useEffect(() => {console.log('New marker', marker)}, [marker])
 
   return (
     <MapContainer center={[22.5726, 88.3639]} zoom={20} style={{ width: '100%', height: '100%'}}>
